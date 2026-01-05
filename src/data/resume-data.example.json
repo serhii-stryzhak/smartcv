@@ -1,0 +1,78 @@
+{
+  "personal": {
+    "name": "John Doe",
+    "title": "Senior Frontend Developer",
+    "location": "Kyiv, Ukraine",
+    "photo": "/photo.png"
+  },
+  "about": "Experienced frontend developer with 8+ years of expertise in building scalable web applications. Passionate about clean code, performance optimization, and modern JavaScript frameworks. Strong background in React ecosystem, TypeScript, and cloud technologies.",
+  "experience": [
+    {
+      "company": "Tech Corp International",
+      "role": "Senior Frontend Developer",
+      "period": "Jan 2021 - Present",
+      "location": "Remote",
+      "achievements": [
+        "Led development of a React-based e-commerce platform serving 1M+ users",
+        "Reduced bundle size by 40% through code splitting and lazy loading",
+        "Mentored team of 5 junior developers, improving code quality metrics by 30%",
+        "Implemented CI/CD pipeline reducing deployment time from 2 hours to 15 minutes"
+      ]
+    },
+    {
+      "company": "Digital Solutions Ltd",
+      "role": "Frontend Developer",
+      "period": "Mar 2018 - Dec 2020",
+      "location": "Kyiv, Ukraine",
+      "achievements": [
+        "Developed responsive web applications using React and TypeScript",
+        "Built reusable component library used across 5 company projects",
+        "Optimized application performance achieving 95+ Lighthouse score"
+      ]
+    },
+    {
+      "company": "StartUp Hub",
+      "role": "Junior Developer",
+      "period": "Jun 2016 - Feb 2018",
+      "location": "Kyiv, Ukraine",
+      "achievements": [
+        "Created interactive dashboards with data visualization",
+        "Participated in agile development process with 2-week sprints"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["React", "TypeScript", "Next.js", "Tailwind CSS", "Redux", "GraphQL"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST API"]
+    },
+    {
+      "category": "DevOps",
+      "items": ["Docker", "CI/CD", "AWS", "Nginx", "Linux"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "Figma", "Jest", "Webpack", "Vite"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "National Technical University",
+      "degree": "Bachelor of Science in Computer Science",
+      "period": "2012 - 2016",
+      "location": "Kyiv, Ukraine"
+    }
+  ],
+  "contacts": {
+    "email": "john.doe@example.com",
+    "phone": "+380 XX XXX XX XX",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "github": "https://github.com/johndoe",
+    "website": "https://johndoe.dev"
+  }
+}
+
