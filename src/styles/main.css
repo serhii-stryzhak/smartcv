@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-border: #e5e5e5;
+  --color-primary: #171717;
+  --color-secondary: #525252;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+}
+
+.dark {
+  --color-background: #0a0a0a;
+  --color-surface: #141414;
+  --color-border: #262626;
+  --color-primary: #ffffff;
+  --color-secondary: #a3a3a3;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-primary min-h-screen transition-colors duration-200;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-6 md:py-8;
+  }
+
+  .container {
+    @apply max-w-4xl mx-auto px-4 md:px-6;
+  }
+
+  .section-title {
+    @apply text-xl md:text-2xl font-semibold mb-6 text-primary;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg p-4 md:p-6;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-hover text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .section {
+    @apply py-4;
+  }
+}
+
