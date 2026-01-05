@@ -80,6 +80,20 @@
   }
 
   .section {
+    @apply py-3;
+  }
+
+  .section-title {
+    @apply mb-4;
+    break-after: avoid;
+  }
+
+  .card {
+    @apply bg-white p-3;
+    box-shadow: none;
+  }
+
+  .container {
     @apply py-4;
   }
 }

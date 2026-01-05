@@ -31,7 +31,7 @@ export const Contacts = ({ contacts }: ContactsProps) => {
   };
 
   return (
-    <section className="section">
+    <section className="section break-inside-avoid">
       <h2 className="section-title">Contacts</h2>
       <div className="grid grid-cols-2 gap-4">
         {contactItems.map(({ key, icon: Icon, prefix }) => {

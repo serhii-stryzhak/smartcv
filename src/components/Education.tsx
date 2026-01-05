@@ -6,14 +6,14 @@ interface EducationProps {
 }
 
 export const Education = ({ education }: EducationProps) => (
-  <section className="section">
+  <section className="section break-inside-avoid">
     <h2 className="section-title">Education</h2>
-    <div className="space-y-4">
+    <div className="space-y-4 print:space-y-2">
       {education.map((edu) => (
-        <div key={`${edu.institution}-${edu.period}`} className="card">
-          <div className="flex items-start gap-4">
-            <div className="p-2 bg-background rounded-lg">
-              <GraduationCap size={24} className="text-accent" />
+        <div key={`${edu.institution}-${edu.period}`} className="card print:p-2">
+          <div className="flex items-start gap-4 print:gap-2">
+            <div className="p-2 print:p-1 bg-background print:bg-white rounded-lg">
+              <GraduationCap size={24} className="text-accent print:text-black print:w-5 print:h-5" />
             </div>
             <div>
               <h3 className="font-semibold text-primary">{edu.degree}</h3>

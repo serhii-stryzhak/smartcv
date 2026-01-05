@@ -1,0 +1,52 @@
+name: Deploy to North Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          PORT: ${{ vars.PORT }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: PORT
+          script: |
+            set -e
+
+            DEPLOY_DIR="$HOME/apps/smartcv"
+            [ ! -d "$DEPLOY_DIR" ] && mkdir -p "$DEPLOY_DIR"
+            cd "$DEPLOY_DIR"
+
+            if [ ! -d .git ]; then
+              git clone "git@github.com:${{ github.repository }}.git" .
+            fi
+
+            echo "NODE_ENV=production" > .env
+            echo "PORT=${PORT:-3000}" >> .env
+
+            if docker images | grep -q "^smartcv-smartcv.*latest"; then
+              docker tag smartcv-smartcv:latest smartcv-smartcv:backup_$(date +%Y%m%d_%H%M%S)
+            fi
+
+            git pull --ff-only
+
+            docker compose down --remove-orphans || true
+            docker compose up -d --build
+
+            for i in $(seq 1 30); do
+              curl -sf "http://localhost:${PORT:-3000}/health" && exit 0
+              sleep 2
+            done
+
+            docker compose logs --tail=50
+            exit 1

@@ -59,15 +59,22 @@ const showFallbackMessage = (button: HTMLElement): void => {
 
   const fallback = document.createElement('div');
 
-  fallback.className = 'text-center text-secondary text-sm leading-relaxed';
+  fallback.className =
+    'bg-surface text-secondary text-sm leading-relaxed p-4 rounded-lg shadow-lg max-w-[280px]';
   fallback.innerHTML = `
     <p class="mb-2">
       <span class="text-lg">🙈</span> 
       <strong class="text-primary">Oops, PDF generation hit a snag!</strong>
     </p>
-    <p>
-      No worries — this page works great as a web CV too.<br>
+    <p class="mb-2">
+      No worries — this page works great as a web CV too.
       Share the link directly, or use <strong>Print → Save as PDF</strong> in your browser.
+    </p>
+    <p>
+      <button 
+        onclick="location.reload()" 
+        class="text-accent hover:text-accent-hover underline font-medium"
+      >Refresh</button> to try again.
     </p>
   `;
 
