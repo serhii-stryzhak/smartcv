@@ -52,7 +52,7 @@ export const Contacts = ({ contacts }: ContactsProps) => {
               rel={key !== 'email' && key !== 'phone' ? 'noopener noreferrer' : undefined}
               className={`flex items-center gap-2 px-4 py-2 bg-surface rounded-lg text-secondary hover:text-primary hover:bg-border transition-colors ${isPrintHidden ? 'print:hidden' : ''}`}
             >
-              <Icon size={18} className="text-accent print:text-black" />
+              <Icon size={18} className="text-accent print:text-black" aria-hidden="true" />
               <span className="text-sm">{displayValue}</span>
             </a>
           );

@@ -18,9 +18,11 @@ export const Header = ({ personal }: HeaderProps) => (
       <h1 className="text-3xl md:text-4xl lg:text-5xl print:text-3xl font-bold text-primary mb-2 print:mb-1">
         {personal.name}
       </h1>
-      <p className="text-xl md:text-2xl print:text-xl text-secondary mb-3 print:mb-1">{personal.title}</p>
+      <p className="text-xl md:text-2xl print:text-xl text-secondary mb-3 print:mb-1">
+        {personal.title}
+      </p>
       <div className="flex items-center justify-center md:justify-start print:justify-start gap-2 text-secondary">
-        <MapPin size={18} className="text-accent print:text-black" />
+        <MapPin size={18} className="text-accent print:text-black" aria-hidden="true" />
         <span>{personal.location}</span>
       </div>
     </div>

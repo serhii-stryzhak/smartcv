@@ -13,7 +13,11 @@ export const Education = ({ education }: EducationProps) => (
         <div key={`${edu.institution}-${edu.period}`} className="card print:p-2">
           <div className="flex items-start gap-4 print:gap-2">
             <div className="p-2 print:p-1 bg-background print:bg-white rounded-lg">
-              <GraduationCap size={24} className="text-accent print:text-black print:w-5 print:h-5" />
+              <GraduationCap
+                size={24}
+                className="text-accent print:text-black print:w-5 print:h-5"
+                aria-hidden="true"
+              />
             </div>
             <div>
               <h3 className="font-semibold text-primary">{edu.degree}</h3>
@@ -22,7 +26,7 @@ export const Education = ({ education }: EducationProps) => (
                 <span>{edu.period}</span>
                 {edu.location && (
                   <span className="flex items-center gap-1">
-                    <MapPin size={12} />
+                    <MapPin size={12} aria-hidden="true" />
                     {edu.location}
                   </span>
                 )}

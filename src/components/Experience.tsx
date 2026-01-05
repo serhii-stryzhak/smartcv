@@ -19,13 +19,13 @@ export const Experience = ({ experience }: ExperienceProps) => (
             <h3 className="text-lg font-semibold text-primary mb-2 print:mb-1">{job.role}</h3>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-secondary">
               <span className="flex items-center gap-1">
-                <Briefcase size={14} />
+                <Briefcase size={14} aria-hidden="true" />
                 {job.company}
               </span>
               <span className="text-sm">{job.period}</span>
               {job.location && (
                 <span className="flex items-center gap-1 text-sm">
-                  <MapPin size={14} />
+                  <MapPin size={14} aria-hidden="true" />
                   {job.location}
                 </span>
               )}

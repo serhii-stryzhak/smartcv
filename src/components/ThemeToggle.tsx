@@ -8,7 +8,7 @@ export const ThemeToggle = () => (
     className="absolute right-0 top-0 p-2 rounded-lg hover:bg-surface hover:rotate-12 transition-all duration-200 no-print"
     aria-label="Toggle theme"
   >
-    <Sun id="theme-icon-sun" size={20} className="text-secondary hidden" />
-    <Moon id="theme-icon-moon" size={20} className="text-secondary" />
+    <Sun id="theme-icon-sun" size={20} className="text-secondary hidden" aria-hidden="true" />
+    <Moon id="theme-icon-moon" size={20} className="text-secondary" aria-hidden="true" />
   </button>
 );

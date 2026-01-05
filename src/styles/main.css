@@ -40,9 +40,22 @@
   * {
     @apply border-border;
   }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent rounded-sm;
+  }
 }
 
 @layer components {
+  .skip-link {
+    @apply absolute -top-10 left-4 bg-accent text-white px-4 py-2 rounded-lg z-50 transition-all;
+  }
+
+  .skip-link:focus {
+    @apply top-4;
+  }
+
   .section {
     @apply py-6 md:py-8;
   }
