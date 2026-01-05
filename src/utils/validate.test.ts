@@ -37,6 +37,7 @@ const validData = {
 describe('validateResumeData', () => {
   it('accepts valid resume data', () => {
     const result = validateResumeData(validData);
+
     expect(result.valid).toBe(true);
     expect(result.data).toBeDefined();
     expect(result.errors).toBeUndefined();
@@ -50,6 +51,7 @@ describe('validateResumeData', () => {
     };
 
     const result = validateResumeData(invalidData);
+
     expect(result.valid).toBe(false);
     expect(result.errors).toBeDefined();
     expect(result.errors!.length).toBeGreaterThan(0);
@@ -62,9 +64,9 @@ describe('validateResumeData', () => {
     };
 
     const result = validateResumeData(invalidData);
+
     expect(result.valid).toBe(false);
     expect(result.errors).toBeDefined();
     expect(result.errors!.some((e) => e.includes('experience'))).toBe(true);
   });
 });
-

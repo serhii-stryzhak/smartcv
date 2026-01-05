@@ -16,7 +16,9 @@ const contactItems = [
 export const Contacts = ({ contacts }: ContactsProps) => {
   const getDisplayValue = (key: string, value: string): string => {
     if (key === 'linkedin') {
-      return value.replace('https://linkedin.com/in/', '').replace('https://www.linkedin.com/in/', '');
+      return value
+        .replace('https://linkedin.com/in/', '')
+        .replace('https://www.linkedin.com/in/', '');
     }
     if (key === 'github') {
       return value.replace('https://github.com/', '');
@@ -24,6 +26,7 @@ export const Contacts = ({ contacts }: ContactsProps) => {
     if (key === 'website') {
       return value.replace('https://', '').replace('http://', '');
     }
+
     return value;
   };
 
@@ -33,6 +36,7 @@ export const Contacts = ({ contacts }: ContactsProps) => {
       <div className="grid grid-cols-2 gap-4">
         {contactItems.map(({ key, icon: Icon, prefix }) => {
           const value = contacts[key as keyof typeof contacts] as string | undefined;
+
           if (!value) return null;
 
           const href = prefix ? `${prefix}${value}` : value;
@@ -57,4 +61,3 @@ export const Contacts = ({ contacts }: ContactsProps) => {
     </section>
   );
 };
-

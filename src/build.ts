@@ -12,7 +12,11 @@ interface PersonalData {
   title: string;
 }
 
-const generateHTML = (content: string, title: string, personal: PersonalData): string => `<!DOCTYPE html>
+const generateHTML = (
+  content: string,
+  title: string,
+  personal: PersonalData
+): string => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -49,6 +53,7 @@ const build = async (): Promise<void> => {
   }
 
   let data;
+
   try {
     data = await loadResumeData();
   } catch (error) {
@@ -63,10 +68,13 @@ const build = async (): Promise<void> => {
   const appElement = createElement(App, { data });
   const html = renderToString(appElement);
   const title = `${data.personal.name} - ${data.personal.title}`;
-  const fullHTML = generateHTML(html, title, { name: data.personal.name, title: data.personal.title });
+  const fullHTML = generateHTML(html, title, {
+    name: data.personal.name,
+    title: data.personal.title,
+  });
 
   const outputPath = resolve(DIST_DIR, 'index.html');
-  
+
   writeFileSync(outputPath, fullHTML, 'utf-8');
 
   console.warn(`Generated: ${outputPath}`);
@@ -77,4 +85,3 @@ build().catch((error) => {
   console.error('Build failed:', error);
   process.exit(1);
 });
-

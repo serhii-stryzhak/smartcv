@@ -23,6 +23,13 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   rules: {
+    'eol-last': ['error', 'always'],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+      { blankLine: 'always', prev: '*', next: 'return' },
+    ],
     'react/react-in-jsx-scope': 'off',
     'react/function-component-definition': [
       'error',
@@ -33,10 +40,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      { argsIgnorePattern: '^_' },
-    ],
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -48,4 +52,3 @@ module.exports = {
   },
   ignorePatterns: ['dist', 'node_modules', '*.js'],
 };
-

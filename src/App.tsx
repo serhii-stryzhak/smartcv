@@ -25,4 +25,3 @@ export const App = ({ data }: AppProps) => (
     <DownloadButton />
   </Layout>
 );
-

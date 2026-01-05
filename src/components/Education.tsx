@@ -9,8 +9,8 @@ export const Education = ({ education }: EducationProps) => (
   <section className="section">
     <h2 className="section-title">Education</h2>
     <div className="space-y-4">
-      {education.map((edu, index) => (
-        <div key={`${edu.institution}-${index}`} className="card">
+      {education.map((edu) => (
+        <div key={`${edu.institution}-${edu.period}`} className="card">
           <div className="flex items-start gap-4">
             <div className="p-2 bg-background rounded-lg">
               <GraduationCap size={24} className="text-accent" />
@@ -34,4 +34,3 @@ export const Education = ({ education }: EducationProps) => (
     </div>
   </section>
 );
-

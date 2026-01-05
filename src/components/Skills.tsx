@@ -28,4 +28,3 @@ export const Skills = ({ skills }: SkillsProps) => (
     </div>
   </section>
 );
-

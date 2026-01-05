@@ -40,4 +40,4 @@ Because shipping 150KB of React to display static text felt wrong. The page is l
 
 ---
 
-*Built as a portfolio piece to demonstrate that sometimes the best code is the code you don't ship.*
+_Built as a portfolio piece to demonstrate that sometimes the best code is the code you don't ship._

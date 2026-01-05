@@ -11,11 +11,7 @@ export const Header = ({ personal }: HeaderProps) => (
     <ThemeToggle />
     {personal.photo && (
       <div className="w-24 h-24 md:w-32 md:h-32 print:w-24 print:h-24 rounded-full overflow-hidden bg-surface flex-shrink-0">
-        <img
-          src={personal.photo}
-          alt={personal.name}
-          className="w-full h-full object-cover"
-        />
+        <img src={personal.photo} alt={personal.name} className="w-full h-full object-cover" />
       </div>
     )}
     <div className="text-center md:text-left print:text-left">
@@ -30,4 +26,3 @@ export const Header = ({ personal }: HeaderProps) => (
     </div>
   </header>
 );
-

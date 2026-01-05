@@ -12,4 +12,3 @@ export const ThemeToggle = () => (
     <Moon id="theme-icon-moon" size={20} className="text-secondary" />
   </button>
 );
-

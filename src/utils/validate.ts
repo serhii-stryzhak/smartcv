@@ -28,6 +28,7 @@ export const validateResumeData = (data: unknown): ValidationResult => {
   const errors =
     validate.errors?.map((err) => {
       const path = err.instancePath || 'root';
+
       return `${path}: ${err.message}`;
     }) ?? [];
 
@@ -62,4 +63,3 @@ export const loadResumeData = async (): Promise<ResumeData> => {
     throw error;
   }
 };
-

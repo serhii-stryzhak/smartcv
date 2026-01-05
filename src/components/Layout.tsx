@@ -9,4 +9,3 @@ export const Layout = ({ children }: LayoutProps) => (
     <main className="container py-8 md:py-12 lg:py-16">{children}</main>
   </div>
 );
-

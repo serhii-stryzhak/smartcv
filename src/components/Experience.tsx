@@ -9,8 +9,11 @@ export const Experience = ({ experience }: ExperienceProps) => (
   <section className="section">
     <h2 className="section-title">Experience</h2>
     <div className="space-y-8">
-      {experience.map((job, index) => (
-        <article key={`${job.company}-${index}`} className="relative pl-6 border-l-2 border-border break-inside-avoid">
+      {experience.map((job) => (
+        <article
+          key={`${job.company}-${job.period}`}
+          className="relative pl-6 border-l-2 border-border break-inside-avoid"
+        >
           <div className="absolute -left-[9px] top-[5px] w-4 h-4 rounded-full bg-accent mb-2" />
           <div className="mb-2">
             <h3 className="text-lg font-semibold text-primary mb-2">{job.role}</h3>
@@ -30,9 +33,9 @@ export const Experience = ({ experience }: ExperienceProps) => (
           </div>
           {job.achievements && job.achievements.length > 0 && (
             <ul className="mt-3 space-y-2">
-              {job.achievements.map((achievement, i) => (
+              {job.achievements.map((achievement) => (
                 <li
-                  key={i}
+                  key={achievement}
                   className="text-secondary text-sm leading-relaxed pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
                 >
                   {achievement}

@@ -8,4 +8,3 @@ export const About = ({ about }: AboutProps) => (
     <p className="text-secondary leading-relaxed text-balance">{about}</p>
   </section>
 );
-

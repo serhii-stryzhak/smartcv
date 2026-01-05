@@ -33,7 +33,7 @@ app.get('/api/generate-pdf', async (_req, res) => {
     await page.setViewport({ width: 1200, height: 800 });
 
     const url = `http://localhost:${PORT}/`;
-    
+
     await page.goto(url, {
       waitUntil: 'networkidle0',
       timeout: 30000,
@@ -77,4 +77,3 @@ app.get('/api/generate-pdf', async (_req, res) => {
 app.listen(PORT, () => {
   console.warn(`Server running on http://localhost:${PORT}`);
 });
-
